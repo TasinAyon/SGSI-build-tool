@@ -31,10 +31,10 @@ if [ $current_sdk_ver = 31 ]; then
     mv $systemdir/apex/com.android.vndk.v31.apex $systemdir/apex/com.android.vndk.current.apex
   fi
 fi
-if [ $current_sdk_ver = 32 ]; then
-  if [ ! -f $systemdir/com.android.vndk.v32.apex ]; then
-    7z x -y $LOCALDIR/com.android.vndk.v32.apex.7z -o$systemdir/apex/ >/dev/null 2>&1
-    mv $systemdir/apex/com.android.vndk.v32.apex $systemdir/apex/com.android.vndk.current.apex
+if [ $current_sdk_ver = 33 ]; then
+  if [ ! -f $systemdir/com.android.vndk.v33.apex ]; then
+    7z x -y $LOCALDIR/com.android.vndk.v33.apex.7z -o$systemdir/apex/ >/dev/null 2>&1
+    mv $systemdir/apex/com.android.vndk.v33.apex $systemdir/apex/com.android.vndk.current.apex
   fi
 fi
 
@@ -45,7 +45,7 @@ fi
 if [ ! -f $systemdir/com.android.vndk.v30.apex ]; then
   7z x -y $LOCALDIR/com.android.vndk.v30.apex.7z -o$systemdir/apex/ >/dev/null 2>&1
 fi
-if [ $current_sdk_ver = 32 ]; then
+if [ $current_sdk_ver = 33 ]; then
   if [ ! -f $systemdir/com.android.vndk.v31.apex ]; then
     7z x -y $LOCALDIR/com.android.vndk.v31.apex.7z -o$systemdir/apex/ >/dev/null 2>&1
   fi
@@ -103,15 +103,15 @@ fi
 rm -rf $systemdir/lib/vndk-29 $systemdir/lib/vndk-sp-29
 rm -rf $systemdir/lib/vndk-30 $systemdir/lib/vndk-sp-30
 rm -rf $systemdir/lib/vndk-31 $systemdir/lib/vndk-sp-31
-if [ $current_sdk_ver = 32 ]; then
-  rm -rf $systemdir/lib/vndk-32 $systemdir/lib/vndk-sp-32
+if [ $current_sdk_ver = 33 ]; then
+  rm -rf $systemdir/lib/vndk-33 $systemdir/lib/vndk-sp-33
 fi
 
 rm -rf $systemdir/lib64/vndk-29 $systemdir/lib64/vndk-sp-29
 rm -rf $systemdir/lib64/vndk-30 $systemdir/lib64/vndk-sp-30
 rm -rf $systemdir/lib64/vndk-31 $systemdir/lib64/vndk-sp-31
-if [ $current_sdk_ver = 32 ]; then
-  rm -rf $systemdir/lib64/vndk-32 $systemdir/lib64/vndk-sp-32
+if [ $current_sdk_ver = 33 ]; then
+  rm -rf $systemdir/lib64/vndk-33 $systemdir/lib64/vndk-sp-33
 fi
 
 ln -s /apex/com.android.vndk.v29/lib $systemdir/lib/vndk-29
@@ -132,7 +132,7 @@ if [ -f $manifest_file ]; then
         <version>30</version>
     </vendor-ndk>
 EOF
-  if [ $current_sdk_ver = 32 ]; then
+  if [ $current_sdk_ver = 33 ]; then
     cat >>"$manifest_file" <<EOF
     <vendor-ndk>
         <version>31</version>
